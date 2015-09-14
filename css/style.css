@@ -1,0 +1,378 @@
+/***** CLEARFIX is applied to the parent of floated elements *************/
+/*************************************************************************/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+/***** GENERIC STYLES *************/
+/**********************************/
+body{
+	background-color: #f0ede4;
+	font-family: Helvetica, sans-serif;
+	color: #850c0c;
+}
+
+.wrapper{
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1025px;
+}
+
+ul{
+	list-style: none;
+	padding: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: #850c0c;
+}
+
+
+/***** SPECIFIC STYLES ************/
+/**********************************/
+.nav, .connect{
+	display: none;
+}
+
+.william{
+	display: none;
+}
+
+.flower{
+	display: none;
+}
+
+header img{
+	width: 100%;
+}
+
+.main_pic{
+	margin: 0;
+	margin-top: 20px;
+}
+
+.main_pic img{
+	width: 100%;
+}
+
+.shows img{
+	width: 35%;
+	border: 2px solid white;
+	box-shadow: 2px 2px 3px #bcbab3;
+	float: left;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.shows p{
+	font-family: "Times New Roman", serif;
+	color: #171717;
+	font-size: 1.1em;
+
+}
+
+.shows .textinshow{
+	width: 100%;
+	position: relative;
+}
+
+.shows .textinshow .readmore{
+	position: absolute;
+	right: 0;
+}
+
+.dracula, .nutcracker, .romeoandjuliet{
+	margin-top: 20px;
+}
+
+.shows .textinshow .readmore{
+	text-decoration: underline;
+	color: #e60000;
+	font-weight: bold;
+}
+
+.pattern1{
+	width: 100%;
+	height: 48px;
+	background-image: url(../img/pattern_1.jpg);
+	background-repeat: repeat-x;
+	margin-top: 20px;
+}
+
+
+.signup p{
+	color: #432b05;
+	font-style: italic;
+	margin: 0;
+	text-align: center;
+}
+
+.signup h2{
+	margin: 0;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.signup form{
+	width: 100%;
+	margin-top: 20px;
+}
+
+.email_bar {
+	display: inline-block;
+	width: 70%;
+}
+
+.email_bar input{
+	display: inline-block;
+	width: 90%;
+	height: 35px;
+	border-radius: 5px;
+}
+
+.button{
+/*	width: 15%;*/
+	display: inline-block;
+	background-color: #8c1b1a;
+	box-shadow: 0 2px 2px black;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px 15px 10px 15px;
+}
+
+.button a{
+	color: white;
+}
+
+.membership a{
+	display: block;
+	font-family: "Times New Roman", serif;
+	color: #8c1b1a;
+	font-weight: bold;
+	font-size: 1.8em;
+	text-align: center;
+	border-radius: 5px;
+	padding: 20px 0 20px 0;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c8a627+0,af7d1b+100 */
+	background: #c8a627; /* Old browsers */
+	background: -moz-linear-gradient(top,  #c8a627 0%, #af7d1b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c8a627), color-stop(100%,#af7d1b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #c8a627 0%,#af7d1b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #c8a627 0%,#af7d1b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #c8a627 0%,#af7d1b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #c8a627 0%,#af7d1b 100%); /* W3C */
+	border: 2px solid #c5ab94;
+	text-shadow: 0px 1px 2px rgba(255,255,255,0.3);
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+footer {
+	position: relative;
+	width: 100%;
+	height: 177px;
+}
+.footer_info, .footer_links{
+	position: absolute;
+	color: white;
+	font-family: "Time New Roman", serif;
+}
+
+.footer_links a{
+	color: white;
+	text-decoration: underline;
+}
+
+.footer_info{
+	left: 25%;
+	top: 10px;
+}
+.footer_info li{
+	text-align: center;
+}
+
+.footer_links{
+	bottom: 10px;
+	right: 20%;
+}
+
+.footer_links ul{
+	display: block;
+}
+
+.footer_links li{
+	display: inline-block;
+}
+
+.footer_links a{
+	display: block;
+	padding-right: 35px;
+}
+.pattern2{
+	position: absolute;
+	width: 100%;
+	height: 177px;
+	background-image: url(../img/pattern_2.jpg);
+	background-repeat: repeat-x;
+}
+
+.pattern3{
+	display: none;
+}
+
+.membership2{
+	display: none;
+}
+
+.signup2{
+	display: none;
+}
+@media screen and (min-width: 600px){
+
+	header .logo{
+		width: 50%;
+	}
+
+	.william{
+		display: block;
+		float: right;
+	}
+
+	.nav{
+		display: inline-block;
+		float: left;
+		width: 30%;
+	}
+
+	.nav li{
+		line-height: 22px;
+		text-align: right;
+	}
+
+	.nav a{
+		font-size: .9em;
+	}
+
+	.connect{
+		display: block;
+		border: 2px solid #c2baa9;
+		border-radius: 5px;
+		border-right: none;
+		padding-right: 10px;
+		width: 99%;
+		margin-top: 20px;
+	}
+
+	.main_pic{
+		float: left;
+		width: 64%;
+		margin-left: 28.7px;
+	}
+
+	.nav ul{
+		border-right: 2px solid #c2baa9;
+		padding-right: 10px;
+	}
+
+	.shows div{
+		width: 21.9%;
+		float: left;
+
+	}
+
+	.clearfix.off_the_wall{
+		margin-top: 20px;
+		margin-right: 20px;
+	}
+ 
+ 	.clearfix.dracula{
+ 		margin-right: 20px;
+ 	}
+
+ 	.clearfix.nutcracker{
+ 		margin-right: 20px;
+ 	}
+
+	.shows .textinshow .readmore{
+		position: relative;
+	}
+
+	.shows p{
+		font-size: 1em;
+	}
+
+	.shows img{
+		width: 100%;
+	}
+
+	.pattern1{
+		display: none;
+	}
+	.pattern3{
+		width: 100%;
+		height: 48px;
+		background-image: url(../img/pattern_1.jpg);
+		background-repeat: repeat-x;
+		margin-top: 20px;
+		display: block;
+		position: relative;
+}
+	
+	.flower{
+		display: block;
+		width: 25%;
+		position: absolute;
+		bottom: -5px;
+		left: 50px;
+	}
+
+	.membership{
+		display: none;
+	}
+
+	.membership2{
+		display: inline-block;
+		position: absolute;
+		width: 15%;
+		left: 98%;
+	}
+
+	.signup2{
+		display: inline-block;
+		float: right;
+	}
+
+	.signup2 h2{
+		display: inline-block;
+	}
+
+	.signup{
+		display: none;
+	}
+
+	.pattern2{
+		margin-top: 20px;
+	}
+
+	.footer_info{
+		bottom: 10%;
+		left: 10%;
+		top: 0;
+	}
+
+	.footer_info li{
+		text-align: left;
+	}
+	
+}
+
