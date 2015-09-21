@@ -14,23 +14,182 @@
   zoom: 1; /* ie 6/7 */
 }
 
+
 /***** GENERIC STYLES *************/
 /**********************************/
+
+
+/* GLOBALS */
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*::selection {
+    background: transparent; 
+}
+
+::-moz-selection {
+    background: transparent; 
+}
+*/
+
+
+.wrapper-demo:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.wrapper-dropdown-3 {
+    /* Size and position */
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+
+    /* Styles */
+    background: #b34f4f;
+    
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+    cursor: pointer;
+    outline: none;
+
+    /* Font settings */
+    font-weight: bold;
+    color: #fff;
+}
+
+.wrapper-dropdown-3:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #fff transparent;
+}
+
+.wrapper-dropdown-3 .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 140%;
+    left: 0;
+    right: 0;
+
+    /* Styles */
+    background: #b34f4f;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-weight: normal;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+    list-style: none;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper-dropdown-3 .dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;    
+}
+
+.wrapper-dropdown-3 .dropdown:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;    
+}
+
+.wrapper-dropdown-3 .dropdown li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    /*border-bottom: 1px solid #e6e8ea;*/
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+
+
+.wrapper-dropdown-3 .dropdown li:last-of-type a {
+    border: none;
+    border-radius: 0 0 7px 7px;
+}
+
+/* Hover state */
+
+.wrapper-dropdown-3 .dropdown li:hover a {
+    color: #6d2725;
+
+}
+
+/* Active state */
+
+.wrapper-dropdown-3.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+header.container{
+	position: relative;
+	z-index: 100;
+}
+
+
+
+
+
+
 body{
 	background-color: #f0ede4;
 	font-family: Helvetica, sans-serif;
 	color: #850c0c;
+
 }
 
-.wrapper{
-	width: 90%;
+.clearfix.wrapper{
+	width: 80%;
 	margin: 0 auto;
 	max-width: 1025px;
+
 }
 
 ul{
 	list-style: none;
 	padding: 0px;
+	position: relative;
+	z-index: 100;
 }
 
 a{
@@ -41,10 +200,10 @@ a{
 
 /***** SPECIFIC STYLES ************/
 /**********************************/
-.nav, .connect{
+
+.site_nav{
 	display: none;
 }
-
 .william{
 	display: none;
 }
@@ -155,6 +314,7 @@ header img{
 	text-align: center;
 	padding: 10px 15px 10px 15px;
 	width: 100%;
+	border: none;
 }
 
 .membership a{
@@ -183,6 +343,8 @@ footer {
 	position: relative;
 	width: 100%;
 	height: 177px;
+	background-image: url(../img/pattern_2.jpg);
+	background-repeat: repeat-x;
 }
 .footer_info, .footer_links{
 	position: absolute;
@@ -197,7 +359,7 @@ footer {
 
 .footer_info{
 	left: 25%;
-	top: 10px;
+	top: 45px;
 }
 .footer_info li{
 	text-align: center;
@@ -205,7 +367,7 @@ footer {
 
 .footer_links{
 	bottom: 10px;
-	right: 20%;
+	right: 30%;
 }
 
 .footer_links ul{
@@ -220,13 +382,7 @@ footer {
 	display: block;
 	padding-right: 35px;
 }
-.pattern2{
-	position: absolute;
-	width: 100%;
-	height: 177px;
-	background-image: url(../img/pattern_2.jpg);
-	background-repeat: repeat-x;
-}
+
 
 .pattern3{
 	display: none;
@@ -239,30 +395,40 @@ footer {
 .signup2{
 	display: none;
 }
-@media screen and (min-width: 600px){
+@media screen and (min-width: 800px){
 
+
+	.wrapper-dropdown-3{
+		display: none;
+	}
+	
 	header .logo{
 		width: 50%;
 	}
 
+
 	.william{
 		display: block;
 		float: right;
+		width: 15%;
 	}
 
-	.nav{
-		display: inline-block;
+	.site_nav{
+		display: block;
 		float: left;
 		width: 30%;
 	}
 
-	.nav li{
+	.site_nav li{
 		line-height: 22px;
 		text-align: right;
+		/*padding-top: 5px;
+		padding-bottom: 5px;*/
 	}
 
-	.nav a{
-		font-size: .9em;
+	.site_nav a{
+		font-size: 1em;
+		padding-right: 10px;
 	}
 
 	.connect{
@@ -273,48 +439,62 @@ footer {
 		padding-right: 10px;
 		width: 99%;
 		margin-top: 20px;
+
 	}
 
 	.main_pic{
-		float: left;
-		width: 64%;
-		margin-left: 28.7px;
+		float: right;
+		width: 65%;
+		margin-top: 0px;
+		margin-bottom: 10px;
 	}
 
-	.nav ul{
+	.site_nav ul{
 		border-right: 2px solid #c2baa9;
-		padding-right: 10px;
+	}
+
+	.button{
+		margin-left: 5px;
 	}
 
 	.shows div{
-		width: 21.9%;
+		width: 21.2%;
 		float: left;
 
 	}
 
 	.clearfix.off_the_wall{
 		margin-top: 20px;
-		margin-right: 20px;
+		margin-right: 5%;
 	}
  
  	.clearfix.dracula{
- 		margin-right: 20px;
+ 		margin-right: 5%;
  	}
 
  	.clearfix.nutcracker{
- 		margin-right: 20px;
+ 		margin-right: 5%;
  	}
 
+ 	.clearfix.romeoandjuliet{
+ 		float: left;
+ 	}
 	.shows .textinshow .readmore{
 		position: relative;
 	}
 
+	.shows h3{
+		margin-bottom: 20px;
+	}
+
 	.shows p{
 		font-size: 1em;
+		margin-bottom: 20px;
 	}
 
 	.shows img{
 		width: 100%;
+		margin-bottom: 20px;
 	}
 
 	.pattern1{
@@ -325,56 +505,101 @@ footer {
 		height: 48px;
 		background-image: url(../img/pattern_1.jpg);
 		background-repeat: repeat-x;
-		margin-top: 20px;
+		margin-top: 50px;
 		display: block;
 		position: relative;
 }
 	
-	.flower{
+	/*.flower{
 		display: block;
-		width: 25%;
-		position: absolute;
-		bottom: -5px;
-		left: 50px;
-	}
+		position: relative;
+		bottom: 88px;
+		left: 25px;
+	}*/
 
 	.membership{
 		display: none;
 	}
 
+	.membership2 a{
+		position: relative;
+		width: 50%;
+		text-align: center;
+		display: block;
+		left: 25%;
+		top: 50%;
+		color: #af5017;
+	}
+
 	.membership2{
 		display: inline-block;
+		background-image: url(../img/flower_bg.png);
+		background-size: 100%;
+		height: 100px;
+		background-repeat: no-repeat;
 		position: absolute;
-		width: 15%;
-		left: 98%;
-	}
-
-	.signup2{
-		display: inline-block;
-		float: right;
-	}
-
-	.signup2 h2{
-		display: inline-block;
+		bottom: 7px;
+		left: 5%;
 	}
 
 	.signup{
 		display: none;
 	}
 
-	.pattern2{
-		margin-top: 20px;
+	footer{
+		margin-top: 80px;
+	}
+
+	footer ul{
+		margin-top: 25px;
 	}
 
 	.footer_info{
-		bottom: 10%;
-		left: 10%;
-		top: 0;
+		left: 15%;
+		top: 10%;
+		display: inline-block;
 	}
 
 	.footer_info li{
 		text-align: left;
 	}
+
+	.footer_links li{
+		display: block;
+	}
+
+	.signup2{
+		display: inline-block;
+		text-align: right;
+		width: 100%;
+		
+	}
+
+	.signup2 .email_bar{
+		width: 65%;
+	}
+	.signup2 h2{
+		display: inline-block;
+		font-size: 1em;
+		margin: 0;
+	}
+
+	.signup2 p{
+		color: #432b05;
+		font-style: italic;
+		margin: 0;
+		line-height: 25px;
+		font-size: .9em;
+	}
 	
+	.signup2 form{
+		float: right;
+	}
+
+	.footer_links{
+		display: inline-block;
+		right: 20%;
+		top: 9%;
+	}
 }
 

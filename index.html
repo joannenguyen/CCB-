@@ -16,14 +16,38 @@
     <body>
 
         <!-- CONTENT FOR WEBSITE -->
-        <img class="william" src="img/william.jpg" alt="William Image">
+      
 
         <div class="clearfix wrapper">
-            <header>
+            <header class="clearfix">
+                <img class="william" src="img/william.jpg" alt="William Image">
                 <img class="logo" src="img/logo.jpg" alt="Columbia City Ballet">
                 <img class= "banner" src="img/banner.png" alt="Anniversary Banner">
-            </header>
-             <section class="nav">
+            <div class="container">
+            <section class="main">
+                <div class="wrapper-demo">
+                    <div id="dd" class="wrapper-dropdown-3" tabindex="1">
+                        <span>Company</span>
+                        <ul class="dropdown">
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Membership</a></li>
+                            <li><a href="#">Support Us</a></li>
+                            <li><a href="#"></i>Season Events</a></li>
+                            <li><a href="#">Buy Tickets</a></li>
+                            <li><a href="#">Educational Outreach</a></li>
+                            <li><a href="#">Auditions/Schedules</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a class="connect" href="#">Connect with more of <strong>Columbia's Sites, Arts and Culture</strong></a></li>
+                        </ul>
+                    </div>
+                ​</div>
+            </section>
+            
+            </div>
+               
+                
+            </header> 
+             <nav class="site_nav">
                 <ul>
                     <li><a href="#">Company</a></li>
                     <li><a href="#">Membership</a></li>
@@ -36,15 +60,13 @@
                     <li><a class="connect" href="#">Connect with more of <strong>Columbia's Sites, Arts and Culture</strong></a></li>
                 </ul>
 
-            </section> <!-- end of .nav -->
+            </nav> 
 
             <div class="main_pic">
                 <img src="img/main_image.jpg" alt="Main Dancing Image">
             </div>
             <div class="signup2">
-                <h2>Sign up for Our E-mail Newsletter</h2>
-                <p>and stay up to date with every event</p>
-                <form action="path/to/serverscript.php" method="post">
+                 <form action="path/to/serverscript.php" method="post">
                     <div class="email_bar">
                         <input type="text" name="email" id="email" value>
                     </div> <!--end of .email_bar-->
@@ -52,14 +74,18 @@
                         <input type="button" value="Sign Up">
                     </div> <!--end of .button-->
                 </form>
+                <h2>Sign up for Our E-mail Newsletter</h2>
+                <p>and stay up to date with every event</p>
             </div> <!-- end of .signup-->
         </div> <!--end of .wrapper-->
 
         <div class="pattern3">
-            <img class="flower" src="img/flower_bg.png" alt="Membership Flower Button">
+            
              <div class="membership2">
-                <a href="#">Purchase a Membership</a>
+                 <!-- <img class="flower" src="img/flower_bg.png" alt="Membership Flower Button"> -->
+                <a href="#">Purchase a <strong>Membership</strong></a>
             </div> <!--end of .membership2-->
+          
         </div><!-- end of .pattern3-->
 
         <div class="clearfix wrapper">
@@ -103,7 +129,7 @@
 
         </div><!-- end of .pattern1-->
 
-        <div class="wrapper">
+        <div class="clearfix wrapper">
             <div class="signup">
                 <h2>Sign up for Our E-mail Newsletter</h2>
                 <p>and stay up to date with every event</p>
@@ -123,9 +149,6 @@
         </div><!--end of .wrapper-->
 
         <footer>
-            <div class="pattern2">
-
-            </div><!-- end of .pattern2-->
             <div class="footer_info">
                 <ul>
                     <li><strong>Columbia City Ballet, 2015</strong></li>
@@ -142,6 +165,55 @@
         </footer>
 
          <script src="js/script.js"></script>
+         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            function DropDown(el) {
+                this.dd = el;
+                this.placeholder = this.dd.children('span');
+                this.opts = this.dd.find('ul.dropdown > li');
+                this.val = '';
+                this.index = -1;
+                this.initEvents();
+            }
+            DropDown.prototype = {
+                initEvents : function() {
+                    var obj = this;
+
+                    obj.dd.on('click', function(event){
+                        $(this).toggleClass('active');
+                        return false;
+                    });
+
+                    obj.opts.on('click',function(){
+                        var opt = $(this);
+                        obj.val = opt.text();
+                        obj.index = opt.index();
+                        obj.placeholder.text(obj.val);
+                    });
+                },
+                getValue : function() {
+                    return this.val;
+                },
+                getIndex : function() {
+                    return this.index;
+                }
+            }
+
+            $(function() {
+
+                var dd = new DropDown( $('#dd') );
+
+                $(document).click(function() {
+                    // all dropdowns
+                    $('.wrapper-dropdown-3').removeClass('active');
+                });
+
+            });
+
+        </script>
+    </body>
+</html>
         
     </body>
 </html>
